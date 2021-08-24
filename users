@@ -1,0 +1,15 @@
+SwagUsers.MouseButton1Click:Connect(function()
+    local TOTAL = 0
+    for i,v in pairs(game.Workspace.Players:GetChildren()) do
+        if not v.UpperTorso:FindFirstChild('OriginalSize') then
+            if v.Name ~= player.Name then
+                TOTAL = TOTAL + 1
+            end
+        end
+    end
+    if TOTAL > 0 then
+        announce('Found','A total of ' .. tostring(TOTAL) .. ' of swag mode players', 3)
+    else
+        announce('D:', 'no swag mode users found', 3)
+    end
+end)
